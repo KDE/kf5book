@@ -5,7 +5,7 @@ a easy way from within your code. The KArchive framework provides a quick
 and easy way to do this from within Qt apps.
 
 While Qt5 provides the QZipWriter and QZipReader classes, these are limited
-only to Zips.KArchive on the other hand supports a wider array of formats
+only to Zips. KArchive on the other hand supports a wider array of formats
 such as p7zip, tar and ar archives, thus giving you the flexibility of
 choosing a format to your liking.
 
