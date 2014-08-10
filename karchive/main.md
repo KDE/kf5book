@@ -11,10 +11,9 @@ choosing the formats which fit your project.
 
 ## Show me the code
 
-Here's a simple example of creating a zip with one file 'Frameworks' with
-the contents 'KZip Test' using KZip :
+Here's a simple 'Hello World' example of KArchive.
 
-//@@snippet(examples/helloworld/main.cpp, helloworld, cpp)
+//@@snippet(karchive/examples/helloworld/main.cpp, helloworld, cpp)
 
 More files can be added by subsequent calls to writeFile(). You also add folders
 to your zip by using the writeDir call as follows :
@@ -27,7 +26,6 @@ Full API docs can be found [here](http://api.kde.org/frameworks-api/frameworks5-
 
 ## Advanced usecases
 
-
 ### Sending compressed data over networks
 KArchive also supports reading and writing compressed data to devices such as
 buffers or sockets via the KCompressionDevice class allowing developers to save
@@ -35,4 +33,4 @@ bandwidth while transmitting data over networks.
 
 A quick example of the KCompressionDevice class can be summed up as:
 
-//@@snippet(examples/bzip2gzip/main.cpp, kcompressiondevice_example, cpp)
+//@@snippet(karchive/examples/bzip2gzip/main.cpp, kcompressiondevice_example, cpp)
