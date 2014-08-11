@@ -15,20 +15,14 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="kde-framework-5-coverbook-front.svg"
+   sodipodi:docname="kde-framework-5-cover-front.svg"
    inkscape:export-filename="kde-framework-5-coverbook-front.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
+  <title
+     id="title3067">KDE Framework 5 - Front cover</title>
   <defs
      id="defs4">
-    <filter
-       id="filter2904"
-       inkscape:collect="always">
-      <feGaussianBlur
-         id="feGaussianBlur2906"
-         stdDeviation="2.32"
-         inkscape:collect="always" />
-    </filter>
     <linearGradient
        y2="155.16769"
        x2="193.5"
@@ -457,14 +451,6 @@
        y2="78.850853" />
     <filter
        inkscape:collect="always"
-       id="filter4681">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.052035156"
-         id="feGaussianBlur4683" />
-    </filter>
-    <filter
-       inkscape:collect="always"
        id="filter4730">
       <feGaussianBlur
          inkscape:collect="always"
@@ -480,7 +466,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="380.61036"
+     inkscape:cx="211.40981"
      inkscape:cy="364.8693"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -498,7 +484,25 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>KDE Framework 5 - Front cover</dc:title>
+        <dc:date>2014-08-11</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Bruno Friedmann</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>KDE eV</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>KDE eV</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:source>git.kde.org/scratch/garg/book</dc:source>
+        <dc:language>en</dc:language>
       </cc:Work>
     </rdf:RDF>
   </metadata>
