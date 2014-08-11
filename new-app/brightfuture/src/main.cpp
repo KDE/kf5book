@@ -27,9 +27,14 @@
 
 int main(int argc, char **argv)
 {
+//@@snippet(application)
     QApplication application(argc, argv);
+//@@end(application)
 
+//@@snippet(i18n)
     KLocalizedString::setApplicationDomain("brightfuture");
+//@@end(i18n)
+//@@snippet(about)
     KAboutData aboutData( QStringLiteral("brightfuture"),
                           i18n("Simple App"),
                           QStringLiteral("0.1"),
@@ -39,14 +44,19 @@ int main(int argc, char **argv)
 
     aboutData.addAuthor(i18n("Cornelius Schumacher"),i18n("Author"), QStringLiteral("schumacher@kde.org"));
     aboutData.setProgramIconName("brightfuture");
+//@@end(about)
+//@@snippet(commandline)
     QCommandLineParser parser;
     parser.addHelpOption();
     parser.addVersionOption();
     aboutData.setupCommandLine(&parser);
     parser.process(application);
     aboutData.processCommandLine(&parser);
+//@@end(commandline)
 
+//@@snippet(mainwindow)
     BrightFuture *appwindow = new BrightFuture;
     appwindow->show();
     return application.exec();
+//@@snippet(mainwindow)
 }
