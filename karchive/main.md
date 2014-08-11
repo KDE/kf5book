@@ -18,9 +18,9 @@ Here's a simple 'Hello World' example of KArchive.
 More files can be added by subsequent calls to writeFile(). You also add folders
 to your zip by using the writeDir call as follows :
 
-```
+~~~ {#worldDirExample .cpp}
     archive.writeDir(QStringLiteral("world dir"));
-```
+~~~
 
 Full API docs can be found [here](http://api.kde.org/frameworks-api/frameworks5-apidocs/karchive/html/index.html)
 
