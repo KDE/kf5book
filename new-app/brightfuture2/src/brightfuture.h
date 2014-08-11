@@ -18,20 +18,37 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "brightfuture.h"
+#ifndef BRIGHTFUTURE_H
+#define BRIGHTFUTURE_H
 
-BrightFuture::BrightFuture()
-    : QMainWindow()
+
+#include <QMainWindow>
+
+#include "ui_brightfuture.h"
+
+//@@snippet_begin(BrightFuture)
+/**
+ * This class serves as the main window for BrightFuture.  It handles the
+ * menus, toolbars and status bars.
+ *
+ * @short Main window class
+ * @author Your Name <mail@example.com>
+ * @version 0.1
+ */
+class BrightFuture : public QMainWindow
 {
-//@@snippet_begin(constructor)
-    QWidget *widget = new QWidget(this);
-    setCentralWidget(widget);
-    m_ui.setupUi(widget);
+    Q_OBJECT
+public:
+    /**
+     * Default Constructor
+     */
+    BrightFuture();
+
+    /**
+     * Default Destructor
+     */
+    virtual ~BrightFuture();
+};
 //@@snippet_end
-}
 
-BrightFuture::~BrightFuture()
-{
-}
-
-#include "brightfuture.moc"
+#endif // _BRIGHTFUTURE_H_

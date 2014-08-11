@@ -27,7 +27,7 @@
 #include "ui_brightfuture.h"
 
 
-//@@snippet(BrightFuture)
+//@@snippet_begin(BrightFuture)
 /**
  * This class serves as the main window for BrightFuture.  It handles the
  * menus, toolbars and status bars.
@@ -55,6 +55,6 @@ private:
     // you can rename it in designer and then change it here
     Ui::mainWidget m_ui;
 };
-//@@end(BrightFuture)
+//@@snippet_end
 
 #endif // _BRIGHTFUTURE_H_

@@ -20,13 +20,30 @@
 
 #include "brightfuture.h"
 
+#include <kplotwidget.h>
+#include <kplotobject.h>
+
 BrightFuture::BrightFuture()
     : QMainWindow()
 {
 //@@snippet_begin(constructor)
-    QWidget *widget = new QWidget(this);
-    setCentralWidget(widget);
-    m_ui.setupUi(widget);
+    KPlotWidget *plot = new KPlotWidget(this);
+    setCentralWidget(plot);
+
+    plot->setLimits(-1, 11, -1, 40);
+
+    KPlotObject *po = new KPlotObject(Qt::white, KPlotObject::Bars, 2);
+    po->setBarBrush(QBrush(Qt::green, Qt::Dense4Pattern));
+
+    float y = 1;
+    for (float x = 1; x <= 10; x += 1) {
+        po->addPoint(x, y);
+        y *= 1.5;
+    }
+
+    plot->addPlotObject(po);
+
+    plot->update();
 //@@snippet_end
 }
 
