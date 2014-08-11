@@ -7,8 +7,8 @@ kde-framework-5-cover-front.svg
 KDE Development
 
 <!-- Big Title below illustration -->
-Framework 5
+KDE Frameworks 5 Cookbook
 
 <!-- Sub title (aka moto) -->
-The C++/Qt developer cookbook
+For C++/Qt developers
 
