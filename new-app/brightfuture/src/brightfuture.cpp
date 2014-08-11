@@ -23,11 +23,11 @@
 BrightFuture::BrightFuture()
     : QMainWindow()
 {
-//@@snippet(constructor)
+//@@snippet_begin(constructor)
     QWidget *widget = new QWidget(this);
     setCentralWidget(widget);
     m_ui.setupUi(widget);
-//@@end(constructor)
+//@@snippet_end
 }
 
 BrightFuture::~BrightFuture()
