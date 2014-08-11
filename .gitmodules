@@ -1,3 +1,9 @@
 [submodule "karchive/karchive"]
 	path = karchive/karchive
 	url = kde:karchive
+[submodule "threadweaver/threadweaver"]
+	path = threadweaver/threadweaver
+	url = kde:threadweaver
+[submodule "sonnet/sonnet"]
+	path = sonnet/sonnet
+	url = kde:sonnet

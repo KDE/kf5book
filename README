@@ -1,1 +1,6 @@
-Book incoming
+This repository uses a number of git submodules. To initialize, run 
+
+git submodule update --init
+
+once after cloning the repository.
+

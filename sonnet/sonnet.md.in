@@ -1,0 +1,44 @@
+# Spellchecking made easy
+
+Sonnet is a very useful framework provided by KDE for software developers who
+want to solve the problem of spellchecking in text editors. It has a plugin
+based architechture and has support for HSpell, Enchant, ASpell and HUNSPELL
+plugins. It even supports automated language detection, based on a combination
+of different algorithms.
+
+## Spellchecking in your QTextEdit
+
+Sonnet can be easily integrated into your QTextEdit as follows :
+
+//@@snippet(sonnet/examples/textedit.cpp, simple_textedit_example, cpp)
+
+
+## Language Detection in Sonnet
+
+Sonnet can determine the differnce between ~75 languages for a given string.
+It is based off a perl script origionaly written by Maciej Ceglowski called Languid.
+His script used a 2 part heuristic to determine language. First the text is is checked
+for the scripts it contains, then for each set of languages useing those scripts a
+n-gram frequency model of a given language is compared to a model of the text. The
+most similar language model is assumed to be the language. If no language is found
+an empty string is returned.
+
+A simple example of language detection using the GuessLanguage class from Sonnet
+can be demonstrated as follows :
+
+```
+    GuessLanguage languageGuesser;
+    QString lang = languageGuesser.identify("My awesome text");
+```
+
+## GUI Widgets provided by Sonnet
+
+Sonnet also provides a few GUI widgets that can be used by Qt applications to configure settings
+in Sonnet, for eg, Qt applications can use the DictionaryComboBox class from Sonnet to get a
+QComboBox that can configure the dictionary used by Sonnet.
+
+//@@snippet(sonnet/examples/dialogexample.cpp, dictionary_combo_box_example, cpp)
+
+The ConfigDialog class from Sonnet provides a more advanced configuration dialog to configure
+settings such as whitelisting words, skipping run together words as well as enabling/disabling
+auto detection of the language.
