@@ -63,7 +63,7 @@ writing applications with KDE Frameworks. It's just a Qt application, and you
 can add whatever you need whenevery you want at a later point in time.
 
 The scope of your idea of course doesn't stop at language barriers, so the
-template comveniently setsup internationalization of the texts of your
+template conveniently sets up internationalization of the texts of your
 application under a dedicated translation domain:
 
 @@snippet(brightfuture/src/main.cpp, i18n, cpp)
