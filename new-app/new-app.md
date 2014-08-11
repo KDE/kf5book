@@ -54,7 +54,7 @@ The starting point is [main.cpp](brightfuture/src/main.cpp). That's where the
 application is set up. The first line of the main function creates an
 application object:
 
-@@snippet(brightfuture/src/main.cpp, qapplication, cpp)
+@@snippet(brightfuture/src/main.cpp, application, cpp)
 
 This is straightforward, but there is one important thing to notice, especially
 if you have seen KDE applications before. We use a `QApplication`, that's with
@@ -103,7 +103,7 @@ It defines a window inherited from `QMainWindow` and adds a main widget
 [brightfuture.ui](brightfuture/src/brightfuture.ui).
 
 The implementation [brightfuture.cpp](brightfuture/src/brightfuture.cpp) brings
-the application to live in its constructor:
+the application to life in its constructor:
 
 @@snippet(brightfuture/src/brightfuture.cpp, constructor, cpp)
 
