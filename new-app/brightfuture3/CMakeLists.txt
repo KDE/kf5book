@@ -18,6 +18,7 @@ find_package(KF5 REQUIRED COMPONENTS
     CoreAddons
     I18n
     Plotting
+    Config
 )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

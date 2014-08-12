@@ -10,6 +10,7 @@ target_link_libraries( brightfuture
     KF5::CoreAddons
     KF5::I18n
     KF5::Plotting
+    KF5::ConfigGui
 )
 
 install( TARGETS brightfuture ${INSTALL_TARGETS_DEFAULT_ARGS} )

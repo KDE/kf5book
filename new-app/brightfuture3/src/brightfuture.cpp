@@ -23,6 +23,8 @@
 #include <KPlotWidget>
 #include <KPlotObject>
 #include <KLocalizedString>
+#include <KSharedConfig>
+#include <KConfigGroup>
 
 #include <QPushButton>
 #include <QBoxLayout>
@@ -68,7 +70,7 @@ BrightFuture::BrightFuture()
 
     m_plot->addPlotObject(m_plot_object);
 
-    plotGreenFuture();
+    plotFuture();
 //@@snippet_end
 }
 
@@ -78,20 +80,29 @@ BrightFuture::~BrightFuture()
 
 void BrightFuture::plotGreenFuture()
 {
-    m_plot_object->setBarBrush(QBrush(Qt::green, Qt::Dense4Pattern));
-    m_plot->update();
+    KConfigGroup config(KSharedConfig::openConfig(), "colors");
+    config.writeEntry("plot", QColor("green"));
+    plotFuture();
 }
 
 void BrightFuture::plotGoldenFuture()
 {
-    m_plot_object->setBarBrush(QBrush(QColor("gold"), Qt::Dense4Pattern));
-    m_plot->update();
+    KConfigGroup config(KSharedConfig::openConfig(), "colors");
+    config.writeEntry("plot", QColor("gold"));
+    plotFuture();
 }
 
 void BrightFuture::plotPinkFuture()
 {
-    m_plot_object->setBarBrush(QBrush(QColor("pink"), Qt::SolidPattern));
-    m_plot->update();
+    KConfigGroup config(KSharedConfig::openConfig(), "colors");
+    config.writeEntry("plot", QColor("pink"));
+    plotFuture();
 }
 
-#include "brightfuture.moc"
+void BrightFuture::plotFuture()
+{
+    KConfigGroup config(KSharedConfig::openConfig(), "colors");
+    QColor color = config.readEntry("plot", QColor("green"));
+    m_plot_object->setBarBrush(QBrush(color, Qt::SolidPattern));
+    m_plot->update();
+}
