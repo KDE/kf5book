@@ -7,17 +7,17 @@ plugins. It even supports automated language detection, based on a combination o
 
 ## Spellchecking in your QTextEdit
 
-Sonnet can be easily integrated into your QTextEdit as follows :
+Sonnet can be easily integrated into your QTextEdit as follows:
 
 //@@snippet(sonnet/examples/textedit.cpp, simple_textedit_example, cpp)
 
-Sonnet::SpellCheckDecorator can also be extended in various ways so as to spell check text
-that is formatted differently, for eg. in emails.
+Sonnet::SpellCheckDecorator can also be extended in various ways to spell check text
+that is formatted differently, for example in emails.
 
 //@@snippet(sonnet/examples/textedit.cpp, simple_email_example, cpp)
 
-This would allow you to use MailSpellCheckDecorator in the exact same way as you would use SpellCheckDecorator,
-but with the added functionality that MailSpellCheckDecorator will simply ignore quoted parts of a email.
+So, you can use MailSpellCheckDecorator in the exactly as you would use SpellCheckDecorator,
+but with the added functionality that MailSpellCheckDecorator will ignore quoted parts of a email.
 
 ## Language Detection in Sonnet
 
@@ -33,8 +33,8 @@ Here you see a simple example of language detection using the GuessLanguage clas
 
 ## GUI Widgets provided by Sonnet
 
-Sonnet also provides a few GUI widgets that can be used by Qt applications to configure settings in Sonnet; for example, Qt applications can use the DictionaryComboBox class from Sonnet to get a QComboBox that can configure the dictionary used by Sonnet.
+Sonnet also provides some GUI widgets that can be used by Qt applications to configure settings in Sonnet; for example Qt applications can use the DictionaryComboBox class from Sonnet to get a QComboBox that can configure the dictionary used by Sonnet.
 
 //@@snippet(sonnet/examples/dialogexample.cpp, dictionary_combo_box_example, cpp)
 
-The ConfigDialog class from Sonnet provides a more advanced configuration dialog to configure settings such as whitelisting words, skipping run-together words as well as enabling/disabling auto detection of the language.
+The ConfigDialog class from Sonnet provides a more advanced configuration dialog to configure settings such as whitelisting words, skipping run-together words as well as enabling or disabling auto detection of the language.
