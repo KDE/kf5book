@@ -16,7 +16,7 @@ that is formatted differently, for example in emails.
 
 //@@snippet(sonnet/examples/textedit.cpp, simple_email_example, cpp)
 
-So, you can use MailSpellCheckDecorator in the exactly as you would use SpellCheckDecorator,
+So, you can use MailSpellCheckDecorator in exactly the same way as you would use SpellCheckDecorator,
 but with the added functionality that MailSpellCheckDecorator will ignore quoted parts of a email.
 
 ## Language Detection in Sonnet
