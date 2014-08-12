@@ -30,16 +30,16 @@ file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(files book.md 01_introduction_to_TW.md 02_adding_tw_to_a_project.md 03_karchive_main.md 04_new-app.md)
 
-add_custom_command(OUTPUT book.html
+add_custom_command(OUTPUT KDE-Frameworks-Cookbook.html
     COMMAND ${PANDOC} --toc --self-contained ${files} -o book.html
     DEPENDS ${files}
 )
 add_custom_target(htmlbook ALL DEPENDS KDE-Frameworks-Cookbook.html)
 
-add_custom_command(OUTPUT book.epub
+add_custom_command(OUTPUT KDE-Frameworks-Cookbook.epub
     COMMAND ${PANDOC} -t epub3 --no-highlight -S --toc --epub-metadata=book-metadata.xml --number-sections --epub-cover-image=covers/cover-front.png --self-contained ${files} -o KDE-Frameworks-Cookbook.epub
     DEPENDS ${files}
 )
-add_custom_target(epubbook ALL DEPENDS book.epub)
+add_custom_target(epubbook ALL DEPENDS KDE-Frameworks-Cookbook.epub)
 
 
