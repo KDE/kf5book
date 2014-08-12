@@ -2,7 +2,7 @@
 
 ## HelW olorld!
 
-Concurrent programming means creating applications that perform multiple operations at the same time. A common problem is that the user sees the application pause. A typical requirement is that an operation which may take an arbitrary amount of time because it is, for example, performing disk I/O, is scheduled for execution but immediately taken of the main thread of the application (then one that starts `main()`). To illustrate how this problem would be solved and to jump right into using ThreadWeaver, let's simulate this problem by printing _Hello World!_ as the asynchronous payload. 
+Concurrent programming means creating applications that perform multiple operations at the same time. A common problem is that the user sees the application pause. A typical requirement is that an operation which may take an arbitrary amount of time because it is, for example, performing disk I/O, is scheduled for execution but immediately taken off the main thread of the application (the one that starts `main()`). To illustrate how this problem would be solved and to jump right into using ThreadWeaver, let's simulate this problem by printing _Hello World!_ as the asynchronous payload. 
 
 @@snippet(threadweaver/examples/HelloWorld/HelloWorld.cpp, sample-helloworld, cpp)
 
