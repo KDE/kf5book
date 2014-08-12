@@ -14,12 +14,14 @@ include(FeatureSummary)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Core Gui Widgets)
 
+##@@snippet_begin(config)
 find_package(KF5 REQUIRED COMPONENTS
     CoreAddons
     I18n
     Plotting
     Config
 )
+##@@snippet_end
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

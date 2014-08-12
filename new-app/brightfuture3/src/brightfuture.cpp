@@ -23,8 +23,10 @@
 #include <KPlotWidget>
 #include <KPlotObject>
 #include <KLocalizedString>
+//@@snippet_begin(include)
 #include <KSharedConfig>
 #include <KConfigGroup>
+//@@snippet_end
 
 #include <QPushButton>
 #include <QBoxLayout>
@@ -85,12 +87,14 @@ void BrightFuture::plotGreenFuture()
     plotFuture();
 }
 
+//@@snippet_begin(write)
 void BrightFuture::plotGoldenFuture()
 {
     KConfigGroup config(KSharedConfig::openConfig(), "colors");
     config.writeEntry("plot", QColor("gold"));
     plotFuture();
 }
+//@@snippet_end
 
 void BrightFuture::plotPinkFuture()
 {
@@ -99,6 +103,7 @@ void BrightFuture::plotPinkFuture()
     plotFuture();
 }
 
+//@@snippet_begin(read)
 void BrightFuture::plotFuture()
 {
     KConfigGroup config(KSharedConfig::openConfig(), "colors");
@@ -106,3 +111,4 @@ void BrightFuture::plotFuture()
     m_plot_object->setBarBrush(QBrush(color, Qt::SolidPattern));
     m_plot->update();
 }
+//@@snippet_end

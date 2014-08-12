@@ -135,3 +135,115 @@ That's all. Here is the plot of the future:
 
 ![sample plot](screenshots/kplotting.png)
 
+
+## Configuring the color
+
+The future is bright, but everybody has a different preference for its color. So
+let's make the color of the future configurable.
+
+KDE Frameworks offers `KConfig`, which is a framework for reading and writing
+configuration data. We will make use of it in our application to save the color
+of the plot we created in the previous section.
+
+### Enabling KConfig
+
+As the first we need to add the framework to the main
+[CMakeList.txt](brightfuture3/CmakeList.txt), so that includes and libraries
+become available:
+
+@@snippet(brightfuture3/CMakeLists.txt, config, cmake)
+
+Then we need to link to the `ConfigGui` library in the
+[CmakeList.txt](brightfuture3/src/CmakeList.txt) file in the `src` directory to
+be able to access the functions `KConfig` provides:
+
+@@snippet(brightfuture3/src/CMakeLists.txt, config, cmake)
+
+`KConfig` provides two libraries: `KConfigCore` and `KConfigGui`. The core
+library contains the basic functionality. The GUI library adds support for
+data type used in GUIs. We want to store a color, which is a GUI type, that is
+why we link to `KConfigGui`.
+
+### Adding the capability to plot in different colors
+
+To be able to make the color configurable, `brightfuture` first needs to be able
+to plot in different colors. We simply do that by adding three buttons, which
+each call a separate slot setting the colors to green, golden, or pink.
+
+![Three-color future](screenshots/three-color-future.png)
+
+This code is straight-forward Qt code. It is in
+[brightfuture.h](brightfuture3/src/brightfuture.h) and
+[brightfuture.cpp](brightfuture3/src/brightfuture.cpp). Have a look there to
+see the details. We will focus on the configuration code now.
+
+### Writing the configuration
+
+We need to classes for dealing with configuration data, `KSharedConfig` and
+`KConfigGroup`, so we add the include statements for them at the top of the
+[brightfuture.cpp](brightfuture3/src/brightfuture.cpp) file:
+
+@@snippet(brightfuture3/src/brightfuture.cpp, include, cpp)
+
+`KSharedConfig` represents a configuration. It is the main class, which provides
+access to configuration groups and takes care of storing, reading, and writing
+configuration data.
+
+`KConfigGroup` represents a named configuration group. This is the object you
+need to actually read and write configuration data. It takes a name, which is
+used to group the configuration in the configuration files.
+
+Now that we have the classes available, we just need to make use of them;
+
+@@snippet(brightfuture3/src/brightfuture.cpp, write, cpp)
+
+This is the function, which is called when pressing one of the color buttons.
+It sets the color and then calls the function doing the actual plot. The
+magic happens in the first two lines of the function.
+
+The first line creates the `KConfigGroup` object, which is used to write the
+configuration. It uses the application-wide shared configuration object, which
+is retrieved by the `KSharedConfig::openConfig()` call. The second parameter
+is the name of the group, where the configuration should be stored.
+
+The second line writes the configuration value we want to store. We simply call
+`writeEntry` on the group object, give it a name of our choice for the
+configuration option, and pass the color as the object to store. `KConfig` does
+the magic to figure out how to deal with a `QColor` object in the configuration
+file behind the scenes.
+
+By default configuration is stored in a INI-style text file in the directory
+`~/.config/brightfuturerc`:
+
+```
+[colors]
+plot=255,215,0
+```
+
+The name of the configuration file is derived from the application name defined
+by `KAboutData` in the [main.cpp](brightfuture3/src/main.cpp) file:
+
+@@snippet(brightfuture3/src/main.cpp, about, cpp)
+
+### Reading the configuration
+
+Now the final step is to read the configuration on startup of the application,
+so that the choice of the user is remebered.
+
+This is done in the `plotFuture` function:
+
+@@snippet(brightfuture3/src/brightfuture.cpp, read, cpp)
+
+We get the "color" group from the configuration object for the application
+again and then call `readEntry` to read the value we wrote before. The second
+parameter `QColor("green")` is the default value, which is used, when no
+value can be found in the configuration file.
+
+We can now start the application, click the "golden" button to change the color
+of the plot to gold, and the next time we start the application the plot is
+rendered golden at once.
+
+![Golden future](screenshots/golden-future.png)
+
+That's all we need. We have made the color of the future configurable and made
+it golden.

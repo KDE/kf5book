@@ -5,6 +5,7 @@ set( brightfuture_SRCS
 
 add_executable( brightfuture ${brightfuture_SRCS} )
 
+##@@snippet_begin(config)
 target_link_libraries( brightfuture
     Qt5::Widgets
     KF5::CoreAddons
@@ -12,6 +13,7 @@ target_link_libraries( brightfuture
     KF5::Plotting
     KF5::ConfigGui
 )
+##@@snippet_end
 
 install( TARGETS brightfuture ${INSTALL_TARGETS_DEFAULT_ARGS} )
 install( PROGRAMS brightfuture.desktop  DESTINATION ${XDG_APPS_INSTALL_DIR} )
