@@ -4,7 +4,7 @@ kde-framework-5-cover-front.svg
 -->
 
 <!-- Title with background  -->
-KDE Development
+KDE Frameworks
 
 <!-- Big Title below illustration -->
 KDE Frameworks 5 Cookbook

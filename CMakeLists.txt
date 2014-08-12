@@ -28,10 +28,18 @@ extract_snippets(new-app new-app.md 04_new-app.md)
 
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
-set(files 01_introduction_to_TW.md 02_adding_tw_to_a_project.md 03_karchive_main.md 04_new-app.md)
+set(files book.md 01_introduction_to_TW.md 02_adding_tw_to_a_project.md 03_karchive_main.md 04_new-app.md)
 
 add_custom_command(OUTPUT book.html
     COMMAND ${PANDOC} --toc --self-contained ${files} -o book.html
     DEPENDS ${files}
 )
-add_custom_target(book ALL DEPENDS book.html)
+add_custom_target(htmlbook ALL DEPENDS KDE-Frameworks-Cookbook.html)
+
+add_custom_command(OUTPUT book.epub
+    COMMAND ${PANDOC} -t epub3 --no-highlight -S --toc --epub-metadata=book-metadata.xml --number-sections --epub-cover-image=covers/cover-front.png --self-contained ${files} -o KDE-Frameworks-Cookbook.epub
+    DEPENDS ${files}
+)
+add_custom_target(epubbook ALL DEPENDS book.epub)
+
+
