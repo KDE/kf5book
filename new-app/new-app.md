@@ -50,7 +50,7 @@ application object:
 
 @@snippet(brightfuture/src/main.cpp, application, cpp)
 
-This is straightforward, but there is one important thing to notice, especially if you have not seen KDE applications before. We use a `QApplication`, that's with a `Q`, not a `K`. So there is no special setup needed anymore for writing applications with KDE Frameworks. It's just a Qt application, and you can add whatever you need whenever you want, later.
+This is straightforward, but there is one important thing to notice, especially if you have not seen KDE applications before. We use a `QApplication`; that's with a `Q` not a `K`. So no special setup is needed anymore for writing applications with KDE Frameworks. It's just a Qt application, and you can later add whatever you need whenever you want.
 
 The scope of your idea of course doesn't stop at language barriers, so the
 template conveniently sets up internationalization of the texts in your
@@ -58,7 +58,7 @@ application under a dedicated translation domain:
 
 @@snippet(brightfuture/src/main.cpp, i18n, cpp)
 
-The next step is to setup some basic information about the application, so that this can be shown to users and wherever else this is useful:
+The next step is to set up some basic information about the application, so that this can be shown to users and wherever else this is useful:
 
 @@snippet(brightfuture/src/main.cpp, about, cpp)
 
@@ -193,11 +193,11 @@ configuration data.
 need to actually read and write configuration data. It takes a name, which is
 used to group the configuration in the configuration files.
 
-Now that we have the classes available, we just need to make use of them;
+Now that we have the classes available, we just need to make use of them:
 
 @@snippet(brightfuture3/src/brightfuture.cpp, write, cpp)
 
-This is the function, which is called when pressing one of the color buttons.
+This is the function which is called when pressing one of the color buttons.
 It sets the color and then calls the function doing the actual plot. The
 magic happens in the first two lines of the function.
 
@@ -228,7 +228,7 @@ by `KAboutData` in the [main.cpp](brightfuture3/src/main.cpp) file:
 ### Reading the configuration
 
 Now the final step is to read the configuration on startup of the application,
-so that the choice of the user is remebered.
+so that the choice of the user is remembered.
 
 This is done in the `plotFuture` function:
 
@@ -236,7 +236,7 @@ This is done in the `plotFuture` function:
 
 We get the "color" group from the configuration object for the application
 again and then call `readEntry` to read the value we wrote before. The second
-parameter `QColor("green")` is the default value, which is used, when no
+parameter `QColor("green")` is the default value which is used when no
 value can be found in the configuration file.
 
 We can now start the application, click the "golden" button to change the color

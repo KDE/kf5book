@@ -9,7 +9,7 @@ This tutorial looks at the KDE configuration data system, starting with an overv
 
 ## Design Essentials
 
-KConfig is designed to abstract away the concept of actual storage and retrieval of configuration settings behind an API that allows easy fetching and setting of information. Where and in what format the data is stored is not relevant to an application using KConfig. This keeps all KDE applications consistent in their handling of configurations while alleviating each and every application author to build such a system on their own from scratch, which can be a highly error prone exercise.
+KConfig is designed to abstract away the concept of actual storage and retrieval of configuration settings behind an API that allows easy fetching and setting of information. Where and in what format the data is stored is not relevant to an application using KConfig. Using Kconfig keeps all KDE applications consistent in their handling of configurations while sparing application authors from the work of building such a system on their own. This eliminates many errors.
 
 A KConfig object represents a single configuration object. Each configuration object is referenced by its unique name and may be actually read from multiple local or remote files or services. Each application has a default configuration object associated with it and there is also a global configuration object.
 
@@ -40,17 +40,17 @@ Each application has its own configuration object that uses the name provided to
 
 This actually uses `KSharedConfig`, which is a ref-counted shared `KConfig` object. More about that in a later section.
 
-The default configuration object for the application is accessed when no name is specified when creating a `KConfig` object. So we could also do this instead - but it would be slower because it would have to parse the whole file again:
+The default configuration object for the application is accessed when no name is specified when creating a `KConfig` object. So we could also do this instead, but it would be slower because it would have to parse the whole file again:
 
 @@snippet(examples/all.cpp, getconfig2, cpp)
 
 ### Commonly Useful Methods
 
-To save the current state of the configuration object we call the `sync()` method. This method is also called when the object is destroyed. If no changes have been made or the resource reports itself as non-writable (such as in the case of the user not having write permissions to the file) then no disk activity occurs. `sync()` merges changes performed concurrently by other processes - local changes have priority, though.
+To save the current state of the configuration object we call the `sync()` method. This method is also called when the object is destroyed. If no changes have been made or the resource reports itself as non-writable (such as in the case of the user not having write permissions to the file) then no disk activity occurs. `sync()` merges changes performed concurrently by other processes. Local changes have priority, though.
 
-If we want to make sure that we have the latest values from disk we can call `reparseConfiguration()` which calls `sync()` and then reloads the data from disk.
+To ensure that we have the latest values from disk, call `reparseConfiguration()` which calls `sync()` and then reloads the data from disk.
 
-If we need to prevent the config object from saving already made modifications to disk we need to call `markAsClean()`. A particular use case for this is rolling back the configuration to the on-disk state by calling `markAsClean()` followed by `reparseConfiguration()`.
+To prevent the config object from saving already-made modifications to disk, call `markAsClean()`. A particular use case for this is rolling back the configuration to the on-disk state by calling `markAsClean()` followed by `reparseConfiguration()`.
 
 Listing all groups in a configuration object is as simple as calling `groupList()` as in this code snippet:
 
@@ -72,7 +72,7 @@ Accessing a `KSharedConfig` object is as easy as this:
 
 ## KConfigGroup
 
-Now that we have a configuration object, the next step is to actually use it. The first thing we must do is to define which group of key/value pairs we wish to access in the object. We do this by creating a KConfigGroup object:
+Now that we have a configuration object, the next step is to actually use it. First define which group of key/value pairs we wish to access in the object. We do this by creating a KConfigGroup object:
 
 @@snippet(examples/all.cpp, configgroup, cpp)
 
@@ -89,7 +89,7 @@ With a `KConfigGroup` object in hand reading entries is now quite straight forwa
 
 @@snippet(examples/all.cpp, reading, cpp)
 
-As can be seen from the above, you can mix reads from different `KConfigGroup` objects created on the same `KConfig` object. The read methods take the key, which is case sensitive, as the first argument and the default value as the second argument. This argument controls what kind of data, e.g. a color in line 74 above, is to be expected as well as the type of object returned. The returned object is wrapped in a `QVariant` to make this magic happen.
+In the example above, one can mix reads from different `KConfigGroup` objects created on the same `KConfig` object. The read methods take the key, which is case sensitive, as the first argument and the default value as the second argument. This argument controls what kind of data, e.g. a color in line 74 above, is to be expected as well as the type of object returned. The returned object is wrapped in a `QVariant` to make this magic happen.
 
 If no such key currently exists in the configuration object, the default value is returned instead. If there is a localized (e.g. translated into another language) entry for the key that matches the current locale, that is returned.
 
@@ -100,18 +100,18 @@ Setting new values is similarly straightforward:
 
 @@snippet(examples/all.cpp, writing, cpp)
 
-Note the use of `writePathEntry` and how the type of object we use, such as `QColor` on line 86, dictates how the data is serialized. Additionally, once we are done writing entries, `sync()` must be called on the config object for it to be saved to disk. We can also simply wait for the object to be destroyed, which triggers an automatic `sync()` if necessary.
+Note the use of `writePathEntry` and how the type of object we use, such as `QColor` on line 86, dictates how the data is serialized. Additionally, once done writing entries, `sync()` must be called on the config object for it to be saved to disk. We can also simply wait for the object to be destroyed, which triggers an automatic `sync()` if necessary.
 
 
 ## KDesktopFile: A Special Case
 
-When is a configuration file not a configuration file? When it is a [desktop file](http://freedesktop.org/wiki/Specifications/desktop-entry-spec). These files, which are essentially configuration files at their heart, are used to describe entries for application menus, mimetypes, plugins and various services.
+When is a configuration file not a configuration file? When it is a [desktop file](http://freedesktop.org/wiki/Specifications/desktop-entry-spec). These files, which are essentially configuration files, which are used to describe entries for application menus, mimetypes, plugins and various services.
 
 When accessing a .desktop file, one should instead use the `KDesktopFile` class which, while a `KConfig` class offering all the capabilities described above, offers a set of methods designed to make accessing standard attributes of these files consistent and reliable.
 
 
 ## KConfig XT
 
-There is a way to make certain use cases of KConfig easier, faster and more reliable: KConfig XT. In particular, for main application or plugin configuration objects and when syncing configuration dialogs and other interfaces with these values, KConfig XT can help immensely. It also  simultaneously documents the configuration options available, which makes every sys admin and system integrator that uses KDE that much more happy.
+There is a way to make certain use cases of KConfig easier, faster and more reliable: KConfig XT. In particular, for main application or plugin configuration objects and when syncing configuration dialogs and other interfaces with these values, KConfig XT can help immensely. It also  simultaneously documents the configuration options available, which makes every sysadmin and system integrator that uses KDE software that much more happy.
 
 Read more about [Using KConfig XT](https://techbase.kde.org/Development/Tutorials/Using_KConfig_XT).
