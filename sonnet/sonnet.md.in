@@ -26,10 +26,10 @@ It is based off a perl script origionaly written by Maciej Ceglowski called Lang
 
 Here you see a simple example of language detection using the GuessLanguage class from Sonnet:
 
-```
+~~~ {.cpp}
     GuessLanguage languageGuesser;
     QString lang = languageGuesser.identify("My awesome text");
-```
+~~~
 
 ## GUI Widgets provided by Sonnet
 
