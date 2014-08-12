@@ -11,6 +11,13 @@ Sonnet can be easily integrated into your QTextEdit as follows :
 
 //@@snippet(sonnet/examples/textedit.cpp, simple_textedit_example, cpp)
 
+Sonnet::SpellCheckDecorator can also be extended in various ways so as to spell check text
+that is formatted differently, for eg. in emails.
+
+//@@snippet(sonnet/examples/textedit.cpp, simple_email_example, cpp)
+
+This would allow you to use MailSpellCheckDecorator in the exact same way as you would use SpellCheckDecorator,
+but with the added functionality that MailSpellCheckDecorator will simply ignore quoted parts of a email.
 
 ## Language Detection in Sonnet
 
