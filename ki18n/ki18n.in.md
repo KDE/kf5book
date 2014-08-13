@@ -3,7 +3,7 @@
 A excellent way of reaching a wider audience with your software is by localizing it.
 The KDE community provides the ki18n framework to do this by leveraging gettext underneath.
 While Qt provides tr, ki18n is much much more powerful than tr, and offers writing 3 broad
-categories of writing messages; General Messages, Specialized Messages, Placeholder Substitution;
+categories of writing messages: General Messages, Specialized Messages, Placeholder Substitution,
 while also providing functionality to include user interface markers to provide
 better context to translators.
 
@@ -307,3 +307,4 @@ i18nc("@action:inmenu create new file", "New");
 The major and minor component of the UI marker are not arbitrary,
 but are drawn from a table which can be found [here](http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/prg_guide.html#good_ctxt).
 
+For much more detail, see http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/prg_guide.html
