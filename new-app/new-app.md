@@ -22,10 +22,19 @@ usually already be neatly pre-filled.
 
 Now continue and finish the wizard and you have the initial code ready for your new application.
 
-Go to the code and compile it with
+Before you compile the code, we highly recommend to first create a build folder that will be separated from your source folder. That's because when you start compiling the application, the build system will create lots of files during the compilation and the folder with your source code could quickly become overpopulated with files. This way you'll have a clean separation between source code and the compiled binary files.
+
+Go to the code folder, create a "build" folder and cd into it
 
 ```
-cmake .
+mkdir build
+cd build
+```
+
+Now compile it with
+
+```
+cmake ..
 make
 ```
 
