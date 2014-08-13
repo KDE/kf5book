@@ -24,7 +24,7 @@ extract_snippets(threadweaver introduction_to_TW.in.md 01_introduction_to_TW.md)
 extract_snippets(threadweaver adding_tw_to_a_project.in.md 02_adding_tw_to_a_project.md)
 extract_snippets(threadweaver/threadweaver/examples HelloWorldRaw.in.md 03_HelloWorldRaw.md)
 extract_snippets(karchive main.md 04_karchive_main.md)
-extract_snippets(sonnet sonnet.md.in 05_sonnet.md)
+extract_snippets(sonnet sonnet.in.md 05_sonnet.md)
 extract_snippets(new-app new-app.md 06_new-app.md)
 
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
