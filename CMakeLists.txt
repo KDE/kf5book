@@ -23,10 +23,11 @@ endfunction()
 extract_snippets(threadweaver introduction_to_TW.in.md 01_introduction_to_TW.md)
 extract_snippets(threadweaver adding_tw_to_a_project.in.md 02_adding_tw_to_a_project.md)
 extract_snippets(threadweaver/threadweaver/examples HelloWorldRaw.in.md 03_HelloWorldRaw.md)
-extract_snippets(karchive main.md 04_karchive_main.md)
-extract_snippets(sonnet sonnet.in.md 05_sonnet.md)
-extract_snippets(ki18n ki18n.in.md 06_ki18n.md)
-extract_snippets(new-app new-app.md 07_new-app.md)
+extract_snippets(threadweaver/threadweaver/examples HelloInternet.in.md 04_HelloInternet.md)
+extract_snippets(karchive main.md 05_karchive_main.md)
+extract_snippets(sonnet sonnet.in.md 06_sonnet.md)
+extract_snippets(ki18n ki18n.in.md 07_ki18n.md)
+extract_snippets(new-app new-app.md 08_new-app.md)
 
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -35,10 +36,11 @@ set(files
 	  01_introduction_to_TW.md 
 	  02_adding_tw_to_a_project.md 
 	  03_HelloWorldRaw.md
-	  04_karchive_main.md 
-          05_sonnet.md
-          06_ki18n.md
-	  07_new-app.md
+	  04_HelloInternet.md
+	  05_karchive_main.md 
+          06_sonnet.md
+          07_ki18n.md
+	  08_new-app.md
 )
 
 add_custom_command(OUTPUT KDE-Frameworks-Cookbook.html
