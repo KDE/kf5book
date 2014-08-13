@@ -22,7 +22,7 @@ but with the added functionality that MailSpellCheckDecorator will ignore quoted
 ## Language Detection in Sonnet
 
 Sonnet can determine the difference between ~75 languages for a given string.
-It is based off a perl script origionaly written by Maciej Ceglowski called Languid. His script used a two-part heuristic to determine language. First the text is is checked for the scripts it contains, next for each set of languages using those scripts a n-gram frequency model of a given language is compared to a model of the text. The most similar language model is assumed to be the language. If no language is found an empty string is returned.
+It is based off a perl script origionaly written by Maciej Ceglowski called Languid. His script used a two-part heuristic to determine language. First the text is checked for the scripts it contains, next for each set of languages using those scripts a n-gram frequency model of a given language is compared to a model of the text. The most similar language model is assumed to be the language. If no language is found an empty string is returned.
 
 Here you see a simple example of language detection using the GuessLanguage class from Sonnet:
 
