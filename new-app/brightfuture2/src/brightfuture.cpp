@@ -32,7 +32,8 @@ BrightFuture::BrightFuture()
 
     plot->setLimits(-1, 11, -1, 40);
 
-    KPlotObject *po = new KPlotObject(Qt::white, KPlotObject::Bars, 2);
+    KPlotObject *po =
+        new KPlotObject(Qt::white, KPlotObject::Bars, 2);
     po->setBarBrush(QBrush(Qt::green, Qt::Dense4Pattern));
 
     float y = 1;

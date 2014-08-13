@@ -36,13 +36,17 @@ int main(int argc, char **argv)
 //@@snippet_end
 //@@snippet_begin(about)
     KAboutData aboutData( QStringLiteral("brightfuture"),
-                          i18n("Simple App"),
-                          QStringLiteral("0.1"),
-                          i18n("A Simple Application written with KDE Frameworks"),
-                          KAboutLicense::GPL,
-                          i18n("(c) 20013-2014, Cornelius Schumacher <schumacher@kde.org>"));
+            i18n("Simple App"),
+            QStringLiteral("0.1"),
+            i18n("A Simple Application written with KDE "
+            "Frameworks"),
+            KAboutLicense::GPL,
+            i18n("(c) 2013-2014, "
+            "Cornelius Schumacher <schumacher@kde.org>"));
 
-    aboutData.addAuthor(i18n("Cornelius Schumacher"),i18n("Author"), QStringLiteral("schumacher@kde.org"));
+    aboutData.addAuthor(i18n("Cornelius Schumacher"),
+                    i18n("Author"),
+                    QStringLiteral("schumacher@kde.org"));
     aboutData.setProgramIconName("brightfuture");
 //@@snippet_end
 //@@snippet_begin(commandline)
