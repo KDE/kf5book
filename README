@@ -1,6 +1,12 @@
 This repository uses a number of git submodules. To initialize, run 
-
 git submodule update --init
 
 once after cloning the repository.
 
+For more information about working with Git submodules, see
+http://blogs.atlassian.com/2013/03/git-submodules-workflows-tips/
+
+To install the snippetextractor, see 
+https://github.com/endocode/snippetextractor
+
+Enjoy!
