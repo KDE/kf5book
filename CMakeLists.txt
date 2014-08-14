@@ -30,6 +30,7 @@ extract_snippets(ki18n ki18n.in.md 07_ki18n.md)
 extract_snippets(new-app new-app.md 08_new-app.md)
 
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY threadweaver/threadweaver/examples/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(files 
 	  ${CMAKE_SOURCE_DIR}/book.md 
