@@ -7,3 +7,6 @@
 [submodule "sonnet/sonnet"]
 	path = sonnet/sonnet
 	url = kde:sonnet
+[submodule "kidletime/kidletime"]
+	path = kidletime/kidletime
+	url = kde:kidletime
