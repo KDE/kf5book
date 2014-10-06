@@ -1,3 +1,6 @@
+# The KDE Frameworks Cookbook
+
+## Introduction
 This repository uses a number of git submodules. To initialize, run 
 git submodule update --init
 
@@ -10,3 +13,11 @@ To install the snippetextractor, see
 https://github.com/endocode/snippetextractor
 
 Enjoy!
+
+## Adding a New Chapter
+For adding a new chapter for a framework called "myframework", you have to:
+1. create a new folder names "myframework"
+2. add a new file called "intro_myframework.in.md" to this folder (and optionally further such files later on) 
+3. add submodule
+   * git submodule add kde:myframework myframework/myframework
+4. and commit your changes
