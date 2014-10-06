@@ -26,6 +26,7 @@ extract_snippets(threadweaver/threadweaver/examples HelloWorldRaw.in.md 03_Hello
 extract_snippets(threadweaver/threadweaver/examples HelloInternet.in.md 04_HelloInternet.md)
 extract_snippets(threadweaver/threadweaver/examples ThumbNailer.in.md 05_ThumbNailer.md)
 extract_snippets(karchive main.md 06_karchive_main.md)
+extract_snippets(kitemmodels kitemmodels.md 06_kitemmodels_main.md)
 extract_snippets(sonnet sonnet.in.md 07_sonnet.md)
 extract_snippets(ki18n ki18n.in.md 08_ki18n.md)
 extract_snippets(new-app new-app.md 09_new-app.md)
@@ -41,7 +42,8 @@ set(files
 	  03_HelloWorldRaw.md
 	  04_HelloInternet.md
 	  05_ThumbNailer.md
-	  06_karchive_main.md 
+	  06_karchive_main.md
+	  06_kitemmodels_main.md
           07_sonnet.md
           08_ki18n.md
 	  09_new-app.md
