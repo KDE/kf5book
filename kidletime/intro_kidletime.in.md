@@ -1,0 +1,3 @@
+# Detect System Idling
+
+Here comes a text about kidletime...

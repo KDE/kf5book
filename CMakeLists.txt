@@ -29,6 +29,7 @@ extract_snippets(karchive main.md 06_karchive_main.md)
 extract_snippets(sonnet sonnet.in.md 07_sonnet.md)
 extract_snippets(ki18n ki18n.in.md 08_ki18n.md)
 extract_snippets(new-app new-app.md 09_new-app.md)
+extract_snippets(kidletime intro_kidletime.in.md 10_kidletime.md)
 
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY threadweaver/threadweaver/examples/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
@@ -44,6 +45,7 @@ set(files
           07_sonnet.md
           08_ki18n.md
 	  09_new-app.md
+          10_kidletime.md
 )
 
 add_custom_command(OUTPUT KDE-Frameworks-Cookbook.html
