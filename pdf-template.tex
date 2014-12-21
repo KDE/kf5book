@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{book}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
@@ -9,6 +9,7 @@ $if(linestretch)$
 \setstretch{$linestretch$}
 $endif$
 \usepackage{amssymb,amsmath}
+\usepackage{pdfpages}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -145,6 +146,11 @@ $header-includes$
 $endfor$
 
 \begin{document}
+\frontmatter
+% front page
+\includepdf[width=\paperwidth,height=\paperheight,keepaspectratio=false]{../covers/cover-front.pdf}
+\clearpage
+
 $if(title)$
 \maketitle
 $endif$
@@ -165,6 +171,8 @@ $if(toc)$
 \tableofcontents
 }
 $endif$
+
+\mainmatter
 $body$
 
 $if(natbib)$
@@ -188,4 +196,15 @@ $for(include-after)$
 $include-after$
 
 $endfor$
+
+% back cover must be on even page
+\ifthenelse{\isodd{\thepage}}{\newpage}{
+    \newpage
+    \phantom{placeholder} % doesn't appear on page
+    \thispagestyle{empty} % if want no header/footer
+    \newpage
+}
+
+% back cover
+\includepdf[width=\paperwidth,height=\paperheight,keepaspectratio=false]{../covers/cover-back.pdf}
 \end{document}
