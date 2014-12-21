@@ -36,18 +36,18 @@ file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY threadweaver/threadweaver/examples/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(files 
-	  ${CMAKE_SOURCE_DIR}/book.md 
-	  01_introduction_to_TW.md 
-	  02_adding_tw_to_a_project.md 
-	  03_HelloWorldRaw.md
-	  04_HelloInternet.md
-	  05_ThumbNailer.md
-	  06_karchive_main.md
-	  06_kitemmodels_main.md
-          07_sonnet.md
-          08_ki18n.md
-	  09_new-app.md
-          10_kidletime.md
+    ${CMAKE_SOURCE_DIR}/book.md
+    01_introduction_to_TW.md
+    02_adding_tw_to_a_project.md
+    03_HelloWorldRaw.md
+    04_HelloInternet.md
+    05_ThumbNailer.md
+    06_karchive_main.md
+    06_kitemmodels_main.md
+    07_sonnet.md
+    08_ki18n.md
+    09_new-app.md
+    10_kidletime.md
 )
 
 add_custom_command(OUTPUT KDE-Frameworks-Cookbook.html
@@ -63,11 +63,9 @@ add_custom_command(OUTPUT KDE-Frameworks-Cookbook.pdf
 add_custom_target(pdfbook ALL DEPENDS KDE-Frameworks-Cookbook.pdf)
 
 add_custom_command(OUTPUT KDE-Frameworks-Cookbook.epub
-  COMMAND ${PANDOC} -t epub3 --no-highlight -S --toc
-  --epub-metadata=${CMAKE_SOURCE_DIR}/book-metadata.xml --number-sections
-  --epub-cover-image=${CMAKE_SOURCE_DIR}/covers/cover-front.png --self-contained ${files} -o KDE-Frameworks-Cookbook.epub
+    COMMAND ${PANDOC} -t epub3 --no-highlight -S --toc
+    --epub-metadata=${CMAKE_SOURCE_DIR}/book-metadata.xml --number-sections
+    --epub-cover-image=${CMAKE_SOURCE_DIR}/covers/cover-front.png --self-contained ${files} -o KDE-Frameworks-Cookbook.epub
     DEPENDS ${files}
 )
 add_custom_target(epubbook ALL DEPENDS KDE-Frameworks-Cookbook.epub)
-
-
