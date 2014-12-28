@@ -38,11 +38,13 @@ extract_snippets(ki18n ki18n.in.md 08_ki18n.md)
 extract_snippets(new-app new-app.md 09_new-app.md)
 extract_snippets(kidletime intro_kidletime.in.md 10_kidletime.md)
 
+file(COPY introduction/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY threadweaver/threadweaver/examples/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(files 
     ${CMAKE_SOURCE_DIR}/book.md
+    ${CMAKE_SOURCE_DIR}/introduction/frameworks5.md
     01_introduction_to_TW.md
     02_adding_tw_to_a_project.md
     03_HelloWorldRaw.md
