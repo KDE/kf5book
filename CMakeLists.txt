@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 2.6)
 project(book NONE)
 
+find_package(ECM 1.0.0 REQUIRED NO_MODULE)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+include(KDEInstallDirs)
+
+set(BOOKDIR ${CMAKE_INSTALL_DATAROOTDIR}/doc/frameworks5)
+
 find_program(SNIPPETEXTRACTOR snippetextractor)
 if (NOT SNIPPETEXTRACTOR)
     message(FATAL_ERROR "Need snippetextractor")
@@ -71,3 +77,11 @@ add_custom_command(OUTPUT KDE-Frameworks-Cookbook.epub
     DEPENDS ${files}
 )
 add_custom_target(epubbook ALL DEPENDS KDE-Frameworks-Cookbook.epub)
+
+install(
+    FILES ${CMAKE_CURRENT_BINARY_DIR}/KDE-Frameworks-Cookbook.html
+        ${CMAKE_CURRENT_BINARY_DIR}/KDE-Frameworks-Cookbook.epub
+        ${CMAKE_CURRENT_BINARY_DIR}/KDE-Frameworks-Cookbook.pdf
+    DESTINATION ${BOOKDIR}
+)
+
