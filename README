@@ -16,7 +16,7 @@ Enjoy!
 
 ## Adding a New Chapter
 For adding a new chapter for a framework called "myframework", you have to:
-1. create a new folder names "myframework"
+1. create a new folder named "myframework"
 2. add a new file called "intro_myframework.in.md" to this folder (and optionally further such files later on) 
 3. add submodule
    * git submodule add kde:myframework myframework/myframework
