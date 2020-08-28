@@ -1,12 +1,12 @@
 [submodule "karchive/karchive"]
 	path = karchive/karchive
-	url = kde:karchive
+	url = https://invent.kde.org/frameworks/karchive
 [submodule "threadweaver/threadweaver"]
 	path = threadweaver/threadweaver
-	url = kde:threadweaver
+	url = https://invent.kde.org/frameworks/threadweaver
 [submodule "sonnet/sonnet"]
 	path = sonnet/sonnet
-	url = kde:sonnet
+	url = https://invent.kde.org/frameworks/sonnet
 [submodule "kidletime/kidletime"]
 	path = kidletime/kidletime
-	url = kde:kidletime
+	url = https://invent.kde.org/frameworks/kidletime
