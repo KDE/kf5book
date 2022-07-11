@@ -67,7 +67,7 @@ add_custom_target(htmlbook ALL DEPENDS KDE-Frameworks-Cookbook.html)
 add_custom_command(OUTPUT KDE-Frameworks-Cookbook.pdf
     COMMAND ${PANDOC} --toc --number-sections ${files} -o KDE-Frameworks-Cookbook.pdf
     --template=${CMAKE_SOURCE_DIR}/pdf-template.tex
-    --chapters
+    --top-level-division=chapter
     DEPENDS ${files} pdf-template.tex
 )
 add_custom_target(pdfbook ALL DEPENDS KDE-Frameworks-Cookbook.pdf)
