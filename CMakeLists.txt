@@ -41,6 +41,7 @@ extract_snippets(kidletime intro_kidletime.in.md 10_kidletime.md)
 file(COPY introduction/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY new-app/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY threadweaver/threadweaver/examples/screenshots DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY covers DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 set(files 
     ${CMAKE_SOURCE_DIR}/book.md
