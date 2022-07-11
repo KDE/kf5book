@@ -149,7 +149,7 @@ QString msg = ks.subs(reportText).toString();
 ~~~
 
 
-`subs` methods do not update the `KLocalizedString` instance on which
+`subs` methods do not update the `KLhttps://api.kde.org/frameworks/ki18n/html/prg_guide.htmocalizedString` instance on which
 they are invoked, but return a copy of it with one argument slot filled.
 This allows to use `KLocalizedString` instances as a templates
 for constructing final texts, by supplying different arguments.
@@ -190,7 +190,7 @@ QStringList myLanguages;
 QString msg = ki18n("Welcome").toString(myLanguages);
 ~~~
 
-[This](http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/prg_guide.html#link_cat)
+[This](https://api.kde.org/frameworks/ki18n/html/prg_guide.html#link_cat)
 section describes how to specify
 the translation *domain*, a canonical name for the catalog file
 from which `*i18n*` calls will draw translations.
@@ -295,6 +295,6 @@ i18nc("@action:inmenu create new file", "New");
 
 
 The major and minor component of the UI marker are not arbitrary,
-but are drawn from a table which can be found [here](http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/prg_guide.html#good_ctxt).
+but are drawn from a table which can be found [here](https://api.kde.org/frameworks/ki18n/html/prg_guide.html#good_ctxt).
 
-For much more detail, see http://api.kde.org/frameworks-api/frameworks5-apidocs/ki18n/html/prg_guide.html
+For much more detail, see https://api.kde.org/frameworks/ki18n/html/prg_guide.html
