@@ -149,7 +149,7 @@ QString msg = ks.subs(reportText).toString();
 ~~~
 
 
-`subs` methods do not update the `KLhttps://api.kde.org/frameworks/ki18n/html/prg_guide.htmocalizedString` instance on which
+`subs` methods do not update the `KLocalizedString` instance on which
 they are invoked, but return a copy of it with one argument slot filled.
 This allows to use `KLocalizedString` instances as a templates
 for constructing final texts, by supplying different arguments.
