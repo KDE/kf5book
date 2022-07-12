@@ -1,4 +1,4 @@
-# Concurrent programming using hreadWeaver
+# Concurrent programming using ThreadWeaver
 
 ## HelW olorld!
 
