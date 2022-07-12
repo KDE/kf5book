@@ -74,7 +74,7 @@ add_custom_command(OUTPUT KDE-Frameworks-Cookbook.pdf
 add_custom_target(pdfbook ALL DEPENDS KDE-Frameworks-Cookbook.pdf)
 
 add_custom_command(OUTPUT KDE-Frameworks-Cookbook.epub
-    COMMAND ${PANDOC} -t epub3 --no-highlight -S --toc
+    COMMAND ${PANDOC} -t epub3 --no-highlight --toc
     --epub-metadata=${CMAKE_SOURCE_DIR}/book-metadata.xml --number-sections
     --epub-cover-image=${CMAKE_SOURCE_DIR}/covers/cover-front.png --self-contained ${files} -o KDE-Frameworks-Cookbook.epub
     DEPENDS ${files}
