@@ -1,6 +1,6 @@
 # Introduction to KConfig
 
-*This is based on the [KConfig tutorial on Techbase](https://techbase.kde.org/Development/Tutorials/KConfig)*
+*This is based on the [KConfig tutorial on Techbase](https://develop.kde.org/docs/use/configuration/introduction/)*
 
 ## Abstract
 
@@ -114,4 +114,4 @@ When accessing a .desktop file, one should instead use the `KDesktopFile` class 
 
 There is a way to make certain use cases of KConfig easier, faster and more reliable: KConfig XT. In particular, for main application or plugin configuration objects and when syncing configuration dialogs and other interfaces with these values, KConfig XT can help immensely. It also  simultaneously documents the configuration options available, which makes every sysadmin and system integrator that uses KDE software that much more happy.
 
-Read more about [Using KConfig XT](https://techbase.kde.org/Development/Tutorials/Using_KConfig_XT).
+Read more about [Using KConfig XT](https://develop.kde.org/docs/use/configuration/kconfig_xt/).
