@@ -108,7 +108,7 @@ This is standard Qt code. We will add a little bit more here later.
 
 We know the future is bright, so let our application plot it. KDE Frameworks
 comes with the framework `KPlotting`, which is able to do simple plots. See the
-[KPlotting API](http://api.kde.org/frameworks-api/frameworks5-apidocs/kplotting/html/index.html)
+[KPlotting API](https://api.kde.org/frameworks/kplotting/html/index.html)
 for more information. We will use it to plot a set of data points in our main
 window.
 
